@@ -7,15 +7,15 @@ public class EnemyScript : MonoBehaviour
 
 private Rigidbody enemyRb;
 private GameObject player;
+public ParticleSystem particles;
 //public Transform targetObj;
 public int health;
 public int attack; 
 public float speed = 3.0f;
 
 void Start() {
-
+  particles = GetComponent<ParticleSystem>();
   enemyRb = GetComponent<Rigidbody>();
-
   player = GameObject.Find("Player"); 
 
  }

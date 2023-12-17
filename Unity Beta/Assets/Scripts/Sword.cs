@@ -1,35 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 
 public class Sword : MonoBehaviour
 {
+    public ParticleSystem particles;
+    private GameManager manager;
 
-    private int score;
-    public TextMeshProUGUI scoreText;
-    //private GameObject player;
-    //public bool attacking = false;
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
-        scoreText.text = "Score: " + score;
-        //player = GameObject.Find("Player");
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
     }
 
+// when colliding with enemy create particle effects, destroy the enemy, and add to score
     private void OnTriggerEnter(Collider other){
         if(other.tag == "Enemy"){
+            Instantiate(particles, other.transform.position, Quaternion.LookRotation(Vector3.up));
             Destroy(other.gameObject);
-            score += 1;
-            scoreText.text = "Score: " + score;
-            //GameObject.enabled = false;
+            manager.addScore();
         }
     }
 }

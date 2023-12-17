@@ -366,6 +366,7 @@
 "Assets/Mini Simple Characters Skeleton Demo/Readme/Scripts/Readme.cs"
 "Assets/Scripts/CameraScript.cs"
 "Assets/Scripts/EnemyScript.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/PlayerMovment.cs"
 "Assets/Scripts/PlayerScript.cs"
